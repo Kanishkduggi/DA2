@@ -1,0 +1,31 @@
+#include <stdio.h>
+void sum_series(int n, float *sum);
+int main() {
+int n;
+float sum = 0;
+printf("Enter n:\n");
+scanf("%d"
+, &n);
+sum_series(n, &sum);
+printf("Sum of the series: %f\n"
+, sum);
+return 0;
+}
+void sum_series(int n, float *sum) {
+if (n == 0) {
+return;
+}
+float term = 1;
+int i;
+Digital assignment 2
+Name: D . K a n i s h k
+Reg.no: 22BRS1029
+First question:
+Write a c program to find the sum of the series 1! /1+2! /2+3!/3+4! /4+5! /5 ... n! /n by utilizing user defined recursivefunction? Get the value of n from the user. Do not use anystorage classes. Without returning the calculated result fromthe function, display the result in main
+Answer:
+for (i = 1; i <= n; i++) {
+term *= i;
+}
+*sum += term / n;
+sum_series(n-1, sum);
+}
